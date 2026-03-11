@@ -13,7 +13,7 @@ import { initGiftScanner } from './gift-scanner.js';
 import { initOps } from './ops.js';
 import { initCookieModal } from './cookie-modal.js';
 
-const ASSETS = '../assets/';
+const ASSETS = '/assets/';
 
 // --- DOM refs ---
 const snowContainer = document.getElementById('snow');

@@ -3,7 +3,7 @@
  */
 
 const SNOW_CHARS = ['❄', '✻', '❅', '•'];
-const ASSETS = '../assets/';
+const ASSETS = '/assets/';
 
 export function createSnowflakes(container) {
   container.innerHTML = '';

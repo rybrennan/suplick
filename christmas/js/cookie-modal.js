@@ -5,7 +5,7 @@
 import { montage } from './utils.js';
 import { openModal, closeModal } from './modals.js';
 
-const ASSETS = '../assets/';
+const ASSETS = '/assets/';
 const COOKIE_IMAGES = [
   `${ASSETS}cookies-1.png`, `${ASSETS}cookies-2.png`, `${ASSETS}cookies-3.png`,
   `${ASSETS}cookies-4.png`, `${ASSETS}cookies-5.png`,
