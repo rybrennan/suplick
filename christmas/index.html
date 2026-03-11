@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>The Suplick Family Christmas 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</head>
+<body>
+  <div class="glow-overlay" id="glow"></div>
+  <div class="fixed-overlay snow-container" id="snow"></div>
+  <div class="fixed-overlay falling-photos" id="fallingPhotos"></div>
+
+  <!-- Weather panel -->
+  <div class="weather-panel">
+    <span class="weather-row"><span class="weather-key">OUT</span> <span class="weather-val">28°F · Light Snow</span></span>
+    <span class="weather-row"><span class="weather-key">IN</span> <span class="weather-val">72°F · Cinnamon</span></span>
+    <span class="weather-row"><span class="weather-key">🔥</span> <span class="weather-val">ROARING</span></span>
+    <span class="weather-row"><span class="weather-key">☕</span> <span class="weather-val">OPTIMAL</span></span>
+  </div>
+
+  <div class="container">
+    <p class="badge">Premium Holiday Portal</p>
+    <h1>SUPLICK XMAS 2026</h1>
+    <p class="subtitle">The Family Protocol</p>
+
+    <div class="hero-cta">
+      <button class="launch-btn" id="launch">Launch Christmas</button>
+      <button class="aux-btn ops-btn" id="opsBtn" title="Santa Tactical Ops">🎅 NORAD Ops</button>
+      <button class="aux-btn music-btn playing" id="musicToggle" title="Click to turn music off">🎵 Music On</button>
+    </div>
+
+    <div class="countdown-section">
+      <p class="countdown-status" id="countdownStatus">The elves are warming up</p>
+      <div class="countdown-grid" id="countdownGrid">
+        <div class="countdown-unit"><span class="countdown-value" id="cdDays">--</span><span class="countdown-label">Days</span></div>
+        <div class="countdown-unit"><span class="countdown-value" id="cdHours">--</span><span class="countdown-label">Hours</span></div>
+        <div class="countdown-unit"><span class="countdown-value" id="cdMins">--</span><span class="countdown-label">Mins</span></div>
+        <div class="countdown-unit"><span class="countdown-value" id="cdSecs">--</span><span class="countdown-label">Secs</span></div>
+      </div>
+    </div>
+
+    <div class="hero-montage" id="heroMontage"></div>
+
+    <div class="features">
+      <div class="feature clickable" id="turkeyFeature" title="Click for turkey status">
+        <span class="feature-icon">🦃</span>
+        <div class="feature-content">
+          <h3>The Turkey Protocol</h3>
+          <p>Real-time oven tracking. Never overdone. Never underdone.</p>
+        </div>
+      </div>
+      <div class="feature clickable" id="cookieFeature" title="Click for cookie montage">
+        <span class="feature-icon">🍪</span>
+        <div class="feature-content">
+          <h3>Cookie Context</h3>
+          <p>Mom mom's recipes.</p>
+        </div>
+      </div>
+      <div class="feature clickable" id="giftFeature" title="Click to scan for duplicate sweaters">
+        <span class="feature-icon">🎁</span>
+        <div class="feature-content">
+          <h3>The Gift Gateway</h3>
+          <p>Autonomous wish-list syncing. Zero duplicate sweaters.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hallmark-card">
+      <h3>🎬 Your Hallmark Destiny</h3>
+      <p style="margin-bottom:0.75rem;font-size:0.9rem;opacity:0.9;">Enter your name to discover your cheesy Christmas romance title.</p>
+      <input type="text" class="hallmark-input" id="hallmarkName" placeholder="Your name" maxlength="30">
+      <button class="hallmark-generate" id="hallmarkGenerate">Generate</button>
+      <div class="hallmark-poster" id="hallmarkPoster" style="display:none;">
+        <p class="hallmark-poster-title" id="hallmarkTitle"></p>
+        <p class="hallmark-poster-tagline" id="hallmarkTagline"></p>
+        <p class="hallmark-poster-cast" id="hallmarkCast"></p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <button class="launch-btn" id="launchBottom">Launch Christmas</button>
+    </div>
+  </div>
+
+  <!-- Turkey Protocol modal -->
+  <div class="modal-overlay" id="turkeyModal">
+    <div class="modal-content turkey-modal-content">
+      <button class="modal-close" id="closeTurkey" aria-label="Close">×</button>
+      <div class="turkey-dashboard">
+        <h3 style="font-family:'Cormorant Garamond';color:var(--gold);margin-bottom:1rem;">🦃 Turkey Protocol — Live</h3>
+        <div class="turkey-stats">
+          <div class="turkey-stat"><span class="turkey-label">Internal Temp</span><span class="turkey-value" id="turkeyTemp">--°F</span></div>
+          <div class="turkey-stat"><span class="turkey-label">Time Remaining</span><span class="turkey-value" id="turkeyTime">--</span></div>
+          <div class="turkey-stat"><span class="turkey-label">Crispiness</span><span class="turkey-value" id="turkeyCrisp">--%</span></div>
+        </div>
+        <p class="turkey-status" id="turkeyStatus">Initializing sensors...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie montage modal -->
+  <div class="modal-overlay" id="cookieModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeCookie" aria-label="Close">×</button>
+      <div class="cookie-montage" id="cookieMontage"></div>
+    </div>
+  </div>
+
+  <!-- Video modal (Twitter embed) -->
+  <div class="modal-overlay video-modal" id="videoModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeVideo" aria-label="Close">×</button>
+      <div id="videoEmbed"></div>
+    </div>
+  </div>
+
+  <!-- Gift Gateway / Sweater Scanner modal -->
+  <div class="modal-overlay" id="giftModal">
+    <div class="modal-content gift-modal-content">
+      <button class="modal-close" id="closeGift" aria-label="Close">×</button>
+      <div class="gift-scanner">
+        <h3 style="font-family:'Cormorant Garamond';color:var(--gold);margin-bottom:1rem;">🎁 Sweater Conflict Scanner</h3>
+        <div class="gift-scan-log" id="giftScanLog">SCANNING...</div>
+        <div class="gift-result" id="giftResult" style="display:none;">
+          <img id="giftResultImg" src="" alt="" class="gift-result-img">
+          <p class="gift-result-text" id="giftResultText"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Santa Ops Center modal -->
+  <div class="modal-overlay ops-modal" id="opsModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeOps" aria-label="Close">×</button>
+      <div class="ops-header">
+        <span class="ops-defcon">DEFCON: MERRY</span>
+        <span class="ops-tracking">● TRACKING</span>
+      </div>
+      <div class="ops-grid">
+        <div class="ops-map">
+          <div class="ops-map-grid"></div>
+          <svg class="ops-map-svg" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet">
+            <path id="santaPath" d="M40,25 Q80,45 120,60" stroke="rgba(22,91,51,0.4)" stroke-width="1" fill="none" stroke-dasharray="4 2"/>
+            <circle cx="120" cy="60" r="4" fill="#22c55e" class="ops-map-target"/>
+            <text x="120" y="72" fill="#22c55e" font-size="6" font-family="monospace" text-anchor="middle">PA</text>
+            <g class="ops-map-santa">
+              <animateMotion dur="14s" repeatCount="indefinite" path="M40,25 Q80,45 120,60"/>
+              <circle r="5" fill="#dc2626"/>
+              <text x="0" y="-7" fill="#dc2626" font-size="5" font-family="monospace" text-anchor="middle">S.CLAUS</text>
+            </g>
+          </svg>
+          <span class="ops-map-legend">SUPLICK RESIDENCE — Pennsylvania · PRIORITY ALPHA</span>
+        </div>
+        <div>
+          <div class="ops-telemetry" id="opsTelemetry"></div>
+          <div class="ops-radar" style="margin-top:1rem;">
+            <div class="ops-radar-sweep"></div>
+          </div>
+        </div>
+        <div class="ops-feed" id="opsFeed"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Christmas music -->
+  <audio id="bgMusic" loop preload="auto" autoplay>
+    <source src="https://www.orangefreesounds.com/wp-content/uploads/2017/12/Free-christmas-music-deck-the-halls-brass-arrangement.mp3" type="audio/mpeg">
+  </audio>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

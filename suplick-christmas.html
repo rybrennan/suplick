@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>The Suplick Family Christmas 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <style>
+    :root {
+      --charcoal: #0c1810;
+      --charcoal-mid: #142118;
+      --red: #b91c1c;
+      --red-bright: #dc2626;
+      --green: #165B33;
+      --green-glow: #22c55e;
+      --gold: #eab308;
+      --gold-dim: #a16207;
+      --cream: #fefce8;
+      --snow: rgba(255,255,255,0.95);
+      --border-red: rgba(185,28,28,0.25);
+      --border-gold: rgba(234,179,8,0.3);
+    }
+
+    *,*::before,*::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--charcoal);
+      color: var(--cream);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+
+    .fixed-overlay { position: fixed; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.5s ease; }
+    .fixed-overlay.active { opacity: 1; }
+    .snow-container { z-index: 100; transition: opacity 0.8s ease; }
+    .falling-photos { z-index: 101; transition: opacity 0.5s ease; }
+    .snowflake { position: absolute; color: var(--snow); font-size: 1rem; animation: fall linear infinite; text-shadow: 0 0 4px rgba(255,255,255,0.5); }
+    @keyframes fall { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.8; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.4; } }
+    .falling-photo {
+      position: absolute;
+      width: 249px;
+      height: auto;
+      max-height: 332px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      border: 2px solid rgba(234,179,8,0.4);
+      animation: fall-photo 10s ease-in forwards, photo-sparkle 2.5s ease-in-out infinite;
+      opacity: 0;
+    }
+    @keyframes fall-photo { 0% { transform: translateY(-150px) rotate(-5deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(8deg); opacity: 0.65; } }
+    @keyframes photo-sparkle {
+      0%, 100% {
+        box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 15px rgba(254,243,199,0.25),
+          0 0 30px rgba(234,179,8,0.15);
+        filter: brightness(1);
+      }
+      50% {
+        box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 25px rgba(254,243,199,0.5),
+          0 0 45px rgba(234,179,8,0.3);
+        filter: brightness(1.08);
+      }
+    }
+
+    .glow-overlay { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 1.2s ease;
+      background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(185,28,28,0.12) 0%, rgba(22,91,51,0.08) 40%, transparent 70%); }
+    .glow-overlay.active { opacity: 1; }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .badge {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 12vw, 7rem);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+      text-shadow: 0 0 60px rgba(234, 179, 8, 0.3);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--gold-dim);
+      letter-spacing: 0.2em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .feature { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.25rem 1.5rem;
+      background: linear-gradient(135deg, rgba(22,91,51,0.2) 0%, rgba(20,33,24,0.6) 100%);
+      border: 1px solid var(--border-red); border-radius: 8px; transition: all 0.3s ease; }
+    .feature:hover { border-color: rgba(185,28,28,0.5); box-shadow: 0 0 30px rgba(185,28,28,0.15); }
+    .feature-icon { font-size: 1.5rem; color: var(--green-glow); flex-shrink: 0; transition: transform 0.3s ease; }
+
+    .feature-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+    }
+
+    .feature-content p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(254, 252, 232, 0.8);
+      line-height: 1.5;
+    }
+
+    .cta {
+      align-self: flex-start;
+    }
+
+    .launch-btn {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(
+        135deg,
+        var(--red) 0%,
+        var(--red-bright) 100%
+      );
+      color: var(--cream);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 20px rgba(185, 28, 28, 0.4);
+    }
+
+    .launch-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(185, 28, 28, 0.5);
+      border-color: var(--cream);
+    }
+
+    .launch-btn.launched {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 4px 30px rgba(185, 28, 28, 0.5);
+      }
+      50% {
+        box-shadow: 0 8px 50px rgba(220, 38, 38, 0.7);
+      }
+    }
+
+    /* Hero montage — one image at a time */
+    .hero-montage {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 4/3;
+      margin: 0 auto 3rem;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(185, 28, 28, 0.3);
+    }
+
+    .hero-montage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+
+    .hero-montage img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .aux-btn { font-size: 0.9rem; padding: 0.5rem 1rem; background: rgba(26,26,26,0.8);
+      border: 1px solid var(--border-red); border-radius: 4px; color: var(--cream); cursor: pointer; transition: all 0.3s ease; }
+    .aux-btn:hover { border-color: var(--green-glow); }
+    .aux-btn.playing { border-color: var(--gold); color: var(--gold); }
+
+    /* Cookie montage modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 15, 15, 0.92);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      position: relative;
+      width: min(90vw, 700px);
+      aspect-ratio: 4/3;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(234, 179, 8, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .cookie-montage {
+      position: absolute;
+      inset: 0;
+    }
+
+    .cookie-montage img {
+      position: absolute;
+      inset: -10%;
+      width: 120%;
+      height: 120%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      animation: kenburns 12s ease-in-out infinite;
+    }
+
+    .cookie-montage img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    @keyframes kenburns {
+      0%, 100% { transform: scale(1) translate(0, 0); }
+      50% { transform: scale(1.08) translate(-2%, -2%); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      border: 1px solid rgba(234, 179, 8, 0.5);
+      background: rgba(15, 15, 15, 0.8);
+      color: var(--cream);
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .modal-close:hover {
+      border-color: var(--gold);
+      background: rgba(185, 28, 28, 0.3);
+    }
+
+    .feature.clickable { cursor: pointer; }
+    .feature.clickable:hover .feature-icon { transform: scale(1.1); }
+
+    /* Video modal */
+    .video-modal .modal-content {
+      width: min(95vw, 550px);
+      min-height: 400px;
+      aspect-ratio: auto;
+    }
+
+    .video-modal .modal-content iframe {
+      width: 100%;
+      min-height: 400px;
+      border: none;
+    }
+
+    .ops-btn {
+      font-family: monospace;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      padding: 0.5rem 1rem;
+      background: rgba(10, 18, 13, 0.95);
+      border: 1px solid #22c55e;
+      color: #22c55e;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.3), inset 0 0 20px rgba(34, 197, 94, 0.05);
+      animation: ops-btn-pulse 2.5s ease-in-out infinite;
+    }
+    .ops-btn:hover {
+      border-color: #4ade80;
+      color: #4ade80;
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.5), inset 0 0 25px rgba(34, 197, 94, 0.08);
+      transform: scale(1.02);
+    }
+    @keyframes ops-btn-pulse {
+      0%, 100% { box-shadow: 0 0 12px rgba(34, 197, 94, 0.3), inset 0 0 20px rgba(34, 197, 94, 0.05); }
+      50% { box-shadow: 0 0 18px rgba(34, 197, 94, 0.45), inset 0 0 25px rgba(34, 197, 94, 0.08); }
+    }
+
+    /* === COUNTDOWN === */
+    .countdown-section {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(22,91,51,0.15) 0%, rgba(20,33,24,0.5) 100%);
+      border: 1px solid rgba(185,28,28,0.25);
+      border-radius: 8px;
+    }
+    .countdown-status {
+      font-size: 0.9rem;
+      color: var(--gold-dim);
+      min-height: 1.5em;
+      transition: opacity 0.3s ease;
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .countdown-unit {
+      min-width: 70px;
+    }
+    .countdown-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+    }
+    .countdown-label { font-size: 0.7rem; color: var(--gold-dim); letter-spacing: 0.15em; }
+
+    /* === WEATHER PANEL === */
+    .weather-panel {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 50;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.25rem 1rem;
+      font-family: monospace;
+      font-size: 0.7rem;
+      padding: 0.5rem 0.75rem;
+      background: rgba(12,24,16,0.92);
+      border: 1px solid rgba(22,91,51,0.4);
+      border-radius: 6px;
+      color: #22c55e;
+      line-height: 1.5;
+    }
+    .weather-row { display: contents; }
+    .weather-key { color: var(--gold-dim); min-width: 1.8em; }
+    .weather-val { color: #22c55e; }
+
+    /* === SANTA OPS MODAL === */
+    .ops-modal .modal-content {
+      width: min(95vw, 900px);
+      max-height: 90vh;
+      aspect-ratio: auto;
+      overflow-y: auto;
+      background: #0a120d;
+      border: 1px solid #165B33;
+    }
+    .ops-grid {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    @media (max-width: 700px) { .ops-grid { grid-template-columns: 1fr; } }
+    .ops-map {
+      position: relative;
+      min-height: 200px;
+      background: #0a120d;
+      border: 1px solid #165B33;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .ops-map-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(22,91,51,0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22,91,51,0.2) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .ops-map-dot {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #dc2626;
+      border-radius: 50%;
+      animation: pulse-dot 1.5s ease-in-out infinite;
+      top: 40%;
+      left: 30%;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 10px #dc2626; }
+      50% { transform: scale(1.3); opacity: 0.8; box-shadow: 0 0 20px #dc2626; }
+    }
+    .ops-map-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .ops-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0.5rem;
+    }
+    .ops-tracking {
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: #22c55e;
+      animation: tracking-blink 1.5s ease-in-out infinite;
+    }
+    @keyframes tracking-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .ops-map-santa circle {
+      animation: pulse-dot 1.5s ease-in-out infinite;
+    }
+    .ops-map-target {
+      animation: target-blink 2s ease-in-out infinite;
+    }
+    @keyframes target-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .ops-map-legend {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      color: #22c55e;
+      font-family: monospace;
+    }
+    .ops-telemetry {
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: #22c55e;
+      line-height: 1.8;
+      padding: 0.75rem;
+      background: rgba(0,0,0,0.5);
+      border-radius: 4px;
+      border: 1px solid #165B33;
+    }
+    .ops-telemetry span { animation: flicker 3s infinite; }
+    @keyframes flicker {
+      0%, 90%, 100% { opacity: 1; }
+      92% { opacity: 0.7; }
+      95% { opacity: 1; }
+    }
+    .ops-feed {
+      grid-column: 1 / -1;
+      font-family: monospace;
+      font-size: 0.65rem;
+      color: #22c55e;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid #165B33;
+      border-radius: 4px;
+      padding: 0.5rem;
+      max-height: 80px;
+      overflow: hidden;
+    }
+    .ops-feed-line { opacity: 0.9; }
+    .ops-defcon {
+      text-align: center;
+      padding: 0.5rem;
+      font-family: monospace;
+      font-weight: bold;
+      color: #22c55e;
+      animation: defcon-pulse 2s ease-in-out infinite;
+    }
+    @keyframes defcon-pulse {
+      0%, 100% { color: #22c55e; text-shadow: 0 0 10px #22c55e; }
+      50% { color: #eab308; text-shadow: 0 0 15px #eab308; }
+    }
+    .ops-radar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #165B33;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    .ops-radar-sweep {
+      position: absolute;
+      inset: 0;
+      background: conic-gradient(from 0deg, transparent 0%, rgba(34,197,94,0.3) 10%, transparent 15%);
+      animation: radar-spin 3s linear infinite;
+    }
+    @keyframes radar-spin { to { transform: rotate(360deg); } }
+
+    /* === HALLMARK GENERATOR === */
+    .hallmark-card {
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(185,28,28,0.15) 0%, rgba(22,91,51,0.15) 100%);
+      border: 1px solid rgba(185,28,28,0.3);
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .hallmark-card h3 { font-family: 'Cormorant Garamond', serif; color: var(--gold); margin-bottom: 1rem; }
+    .hallmark-input { width: 100%; max-width: 300px; padding: 0.5rem; margin-right: 0.5rem; margin-bottom: 0.5rem;
+      background: var(--charcoal-mid); border: 1px solid rgba(185,28,28,0.3); border-radius: 4px; color: var(--cream); }
+    .hallmark-generate {
+      padding: 0.5rem 1rem;
+      background: var(--red);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      color: var(--cream);
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .hallmark-poster {
+      margin-top: 1rem;
+      padding: 1.5rem;
+      background: linear-gradient(180deg, #1a0a0a 0%, #0a120d 100%);
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      text-align: center;
+      min-height: 180px;
+    }
+    .hallmark-poster-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 0.5rem; font-style: italic; }
+    .hallmark-poster-tagline { font-size: 0.85rem; color: var(--cream); opacity: 0.9; margin-bottom: 0.5rem; }
+    .hallmark-poster-cast { font-size: 0.75rem; color: var(--gold-dim); }
+
+    /* Turkey Protocol modal */
+    .turkey-modal-content {
+      width: min(90vw, 400px);
+      aspect-ratio: auto;
+      padding: 1.5rem;
+    }
+    .turkey-dashboard {
+      font-family: monospace;
+      color: #22c55e;
+    }
+    .turkey-stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .turkey-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .turkey-label { font-size: 0.7rem; color: var(--gold-dim); }
+    .turkey-value { font-size: 1.2rem; font-weight: bold; color: var(--gold); }
+    .turkey-status { font-size: 0.75rem; opacity: 0.9; margin-top: 0.5rem; }
+
+    /* Gift Gateway / Sweater Scanner */
+    .gift-modal-content { width: min(90vw, 420px); aspect-ratio: auto; padding: 1.5rem; }
+    .gift-scanner { font-family: monospace; color: var(--green-glow); }
+    .gift-scan-log { font-size: 0.8rem; min-height: 2.5rem; line-height: 1.6; animation: flicker 3s infinite; }
+    .gift-result { margin-top: 1rem; text-align: center; }
+    .gift-result-img { max-width: 100%; max-height: 200px; border-radius: 8px; border: 1px solid var(--border-gold); }
+    .gift-result-text { font-size: 0.85rem; color: var(--gold); margin-top: 0.75rem; }
+
+    /* === MOBILE OPTIMIZATION === */
+    @media (max-width: 700px) {
+      .container { padding: 2rem 1rem; padding-bottom: max(2rem, env(safe-area-inset-bottom)); }
+      h1 { font-size: clamp(2.5rem, 10vw, 5rem); }
+      .subtitle { font-size: 0.9rem; letter-spacing: 0.15em; }
+      .badge { font-size: 0.65rem; letter-spacing: 0.3em; margin-bottom: 1rem; }
+      .hero-cta { flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+      .launch-btn, .aux-btn { width: 100%; min-height: 48px; display: flex; align-items: center; justify-content: center; -webkit-tap-highlight-color: transparent; }
+      .launch-btn { padding: 1rem; font-size: 1.1rem; }
+      .aux-btn { padding: 0.75rem 1rem; font-size: 0.9rem; }
+      .ops-btn { font-size: 0.75rem; letter-spacing: 0.1em; }
+      .countdown-section { padding: 1rem; margin-bottom: 2rem; }
+      .countdown-status { font-size: 0.8rem; letter-spacing: 0.1em; }
+      .countdown-grid { gap: 0.75rem; }
+      .countdown-unit { min-width: 60px; }
+      .countdown-value { font-size: 2rem; }
+      .countdown-label { font-size: 0.65rem; }
+      .hero-montage { margin-bottom: 2rem; max-width: 100%; }
+      .features { gap: 1rem; margin-bottom: 2.5rem; }
+      .feature { padding: 1rem 1.25rem; min-height: 48px; -webkit-tap-highlight-color: transparent; }
+      .feature-content h3 { font-size: 1.1rem; }
+      .feature-content p { font-size: 0.85rem; }
+      .feature-icon { font-size: 1.35rem; }
+      .hallmark-card { padding: 1rem; margin-bottom: 1.5rem; }
+      .hallmark-input { max-width: none; margin-right: 0; }
+      .hallmark-generate { min-height: 44px; padding: 0.6rem 1rem; }
+      .hallmark-poster { padding: 1rem; min-height: 140px; }
+      .hallmark-poster-title { font-size: 1.25rem; }
+      .weather-panel { bottom: max(12px, env(safe-area-inset-bottom)); left: 12px; font-size: 0.6rem; padding: 0.4rem 0.6rem; gap: 0.2rem 0.6rem; }
+      .falling-photo { width: min(180px, 45vw); max-height: 240px; }
+      .falling-photo-0 { left: 18% !important; animation-delay: 0s !important; }
+      .falling-photo-1 { left: 50% !important; animation-delay: 2.5s !important; }
+      .falling-photo-2 { left: 18% !important; animation-delay: 5s !important; }
+      .modal-content { width: 95vw; max-height: 85vh; }
+      .modal-close { width: 3rem; height: 3rem; top: 0.75rem; right: 0.75rem; min-width: 44px; min-height: 44px; }
+      .ops-modal .modal-content { width: 95vw; max-height: 90vh; }
+      .ops-grid { padding: 0.75rem; }
+      .ops-map { min-height: 160px; }
+      .ops-telemetry { font-size: 0.65rem; padding: 0.5rem; }
+      .ops-feed { font-size: 0.6rem; max-height: 60px; }
+      .ops-radar { width: 90px; height: 90px; }
+      .turkey-modal-content, .gift-modal-content { width: 95vw; padding: 1rem; }
+      .turkey-stats { gap: 1rem; }
+      .turkey-value { font-size: 1rem; }
+      .video-modal .modal-content { min-height: 250px; }
+      .video-modal .modal-content iframe { min-height: 250px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 1.5rem 0.75rem; }
+      h1 { font-size: clamp(2rem, 12vw, 4rem); }
+      .countdown-unit { min-width: 55px; }
+      .countdown-value { font-size: 1.75rem; }
+      .falling-photo { width: min(150px, 42vw); max-height: 200px; }
+      .falling-photo-0 { left: 18% !important; animation-delay: 0s !important; }
+      .falling-photo-1 { left: 50% !important; animation-delay: 2.5s !important; }
+      .falling-photo-2 { left: 18% !important; animation-delay: 5s !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-overlay" id="glow"></div>
+  <div class="fixed-overlay snow-container" id="snow"></div>
+  <div class="fixed-overlay falling-photos" id="fallingPhotos"></div>
+
+  <!-- Weather panel -->
+  <div class="weather-panel">
+    <span class="weather-row"><span class="weather-key">OUT</span> <span class="weather-val">28°F · Light Snow</span></span>
+    <span class="weather-row"><span class="weather-key">IN</span> <span class="weather-val">72°F · Cinnamon</span></span>
+    <span class="weather-row"><span class="weather-key">🔥</span> <span class="weather-val">ROARING</span></span>
+    <span class="weather-row"><span class="weather-key">☕</span> <span class="weather-val">OPTIMAL</span></span>
+  </div>
+
+  <div class="container">
+    <p class="badge">A Premium Holiday Web Experience</p>
+    <h1>SUPLICK HOLIDAY PORTAL</h1>
+    <p class="subtitle">The Family Protocol</p>
+
+    <div class="hero-cta">
+      <button class="launch-btn" id="launch">Launch Christmas</button>
+      <button class="aux-btn ops-btn" id="opsBtn" title="Santa Tactical Ops">🎅 NORAD Ops</button>
+      <button class="aux-btn music-btn playing" id="musicToggle" title="Click to turn music off">🎵 Music On</button>
+    </div>
+
+    <div class="countdown-section">
+      <p class="countdown-status" id="countdownStatus">The elves are warming up</p>
+      <div class="countdown-grid" id="countdownGrid">
+        <div class="countdown-unit"><span class="countdown-value" id="cdDays">--</span><span class="countdown-label">Days</span></div>
+        <div class="countdown-unit"><span class="countdown-value" id="cdHours">--</span><span class="countdown-label">Hours</span></div>
+        <div class="countdown-unit"><span class="countdown-value" id="cdMins">--</span><span class="countdown-label">Mins</span></div>
+        <div class="countdown-unit"><span class="countdown-value" id="cdSecs">--</span><span class="countdown-label">Secs</span></div>
+      </div>
+    </div>
+
+    <div class="hero-montage" id="heroMontage"></div>
+
+    <div class="features">
+      <div class="feature clickable" id="turkeyFeature" title="Click for turkey status">
+        <span class="feature-icon">🦃</span>
+        <div class="feature-content">
+          <h3>The Turkey Protocol</h3>
+          <p>Real-time oven tracking. Never overdone. Never underdone.</p>
+        </div>
+      </div>
+      <div class="feature clickable" id="cookieFeature" title="Click for cookie montage">
+        <span class="feature-icon">🍪</span>
+        <div class="feature-content">
+          <h3>Cookie Context</h3>
+          <p>Mom mom's recipes.</p>
+        </div>
+      </div>
+      <div class="feature clickable" id="giftFeature" title="Click to scan for duplicate sweaters">
+        <span class="feature-icon">🎁</span>
+        <div class="feature-content">
+          <h3>The Gift Gateway</h3>
+          <p>Autonomous wish-list syncing. Zero duplicate sweaters.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hallmark-card">
+      <h3>🎬 Your Hallmark Destiny</h3>
+      <p style="margin-bottom:0.75rem;font-size:0.9rem;opacity:0.9;">Enter your name to discover your cheesy Christmas romance title.</p>
+      <input type="text" class="hallmark-input" id="hallmarkName" placeholder="Your name" maxlength="30">
+      <button class="hallmark-generate" id="hallmarkGenerate">Generate</button>
+      <div class="hallmark-poster" id="hallmarkPoster" style="display:none;">
+        <p class="hallmark-poster-title" id="hallmarkTitle"></p>
+        <p class="hallmark-poster-tagline" id="hallmarkTagline"></p>
+        <p class="hallmark-poster-cast" id="hallmarkCast"></p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <button class="launch-btn" id="launchBottom">Launch Christmas</button>
+    </div>
+  </div>
+
+  <!-- Turkey Protocol modal -->
+  <div class="modal-overlay" id="turkeyModal">
+    <div class="modal-content turkey-modal-content">
+      <button class="modal-close" id="closeTurkey" aria-label="Close">×</button>
+      <div class="turkey-dashboard">
+        <h3 style="font-family:'Cormorant Garamond';color:var(--gold);margin-bottom:1rem;">🦃 Turkey Protocol — Live</h3>
+        <div class="turkey-stats">
+          <div class="turkey-stat"><span class="turkey-label">Internal Temp</span><span class="turkey-value" id="turkeyTemp">--°F</span></div>
+          <div class="turkey-stat"><span class="turkey-label">Time Remaining</span><span class="turkey-value" id="turkeyTime">--</span></div>
+          <div class="turkey-stat"><span class="turkey-label">Crispiness</span><span class="turkey-value" id="turkeyCrisp">--%</span></div>
+        </div>
+        <p class="turkey-status" id="turkeyStatus">Initializing sensors...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie montage modal -->
+  <div class="modal-overlay" id="cookieModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeCookie" aria-label="Close">×</button>
+      <div class="cookie-montage" id="cookieMontage"></div>
+    </div>
+  </div>
+
+  <!-- Video modal (Twitter embed) -->
+  <div class="modal-overlay video-modal" id="videoModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeVideo" aria-label="Close">×</button>
+      <div id="videoEmbed"></div>
+    </div>
+  </div>
+
+  <!-- Gift Gateway / Sweater Scanner modal -->
+  <div class="modal-overlay" id="giftModal">
+    <div class="modal-content gift-modal-content">
+      <button class="modal-close" id="closeGift" aria-label="Close">×</button>
+      <div class="gift-scanner">
+        <h3 style="font-family:'Cormorant Garamond';color:var(--gold);margin-bottom:1rem;">🎁 Sweater Conflict Scanner</h3>
+        <div class="gift-scan-log" id="giftScanLog">SCANNING...</div>
+        <div class="gift-result" id="giftResult" style="display:none;">
+          <img id="giftResultImg" src="" alt="" class="gift-result-img">
+          <p class="gift-result-text" id="giftResultText"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Santa Ops Center modal -->
+  <div class="modal-overlay ops-modal" id="opsModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeOps" aria-label="Close">×</button>
+      <div class="ops-header">
+        <span class="ops-defcon">DEFCON: MERRY</span>
+        <span class="ops-tracking">● TRACKING</span>
+      </div>
+      <div class="ops-grid">
+        <div class="ops-map">
+          <div class="ops-map-grid"></div>
+          <svg class="ops-map-svg" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet">
+            <path id="santaPath" d="M40,25 Q80,45 120,60" stroke="rgba(22,91,51,0.4)" stroke-width="1" fill="none" stroke-dasharray="4 2"/>
+            <circle cx="120" cy="60" r="4" fill="#22c55e" class="ops-map-target"/>
+            <text x="120" y="72" fill="#22c55e" font-size="6" font-family="monospace" text-anchor="middle">PA</text>
+            <g class="ops-map-santa">
+              <animateMotion dur="14s" repeatCount="indefinite" path="M40,25 Q80,45 120,60"/>
+              <circle r="5" fill="#dc2626"/>
+              <text x="0" y="-7" fill="#dc2626" font-size="5" font-family="monospace" text-anchor="middle">S.CLAUS</text>
+            </g>
+          </svg>
+          <span class="ops-map-legend">SUPLICK RESIDENCE — Pennsylvania · PRIORITY ALPHA</span>
+        </div>
+        <div>
+          <div class="ops-telemetry" id="opsTelemetry"></div>
+          <div class="ops-radar" style="margin-top:1rem;">
+            <div class="ops-radar-sweep"></div>
+          </div>
+        </div>
+        <div class="ops-feed" id="opsFeed"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Christmas music: swap src for your own MP3. Free options: Pixabay, filmmusic.io, Silverman Sound -->
+  <audio id="bgMusic" loop preload="auto" autoplay>
+    <source src="https://www.orangefreesounds.com/wp-content/uploads/2017/12/Free-christmas-music-deck-the-halls-brass-arrangement.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const snowChars = ['❄', '✻', '❅', '•'];
+    const snowContainer = document.getElementById('snow');
+    const glowOverlay = document.getElementById('glow');
+    const launchBtn = document.getElementById('launch');
+    const launchBtnBottom = document.getElementById('launchBottom');
+    const musicToggle = document.getElementById('musicToggle');
+    const bgMusic = document.getElementById('bgMusic');
+    const intervals = {};
+
+    function montage(container, images, ms, alts) {
+      let i = 0;
+      container.innerHTML = '';
+      images.forEach((src, j) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = alts ? alts[j] || '' : '';
+        if (j === 0) img.classList.add('active');
+        container.appendChild(img);
+      });
+      return setInterval(() => {
+        const imgs = container.querySelectorAll('img');
+        if (!imgs.length) return;
+        imgs.forEach(img => img.classList.remove('active'));
+        i = (i + 1) % imgs.length;
+        imgs[i].classList.add('active');
+      }, ms);
+    }
+
+    const heroImages = ['assets/holiday-meal.png','assets/tree-1.png','assets/tree-2.png','assets/montage-lights.png','assets/montage-tree-decorating.png','assets/montage-cat.png','assets/cookies-1.png','assets/cookies-2.png','assets/holiday-house.png','assets/snow-shovel.png','assets/iced-tea.png','assets/cookies-3.png','assets/cookies-4.png','assets/cookies-5.png'];
+    montage(document.getElementById('heroMontage'), heroImages, 4000);
+
+    // Music: start on load (browsers may block until first interaction)
+    bgMusic.play().then(() => {
+      musicToggle.textContent = '🎵 Music On';
+      musicToggle.classList.add('playing');
+    }).catch(() => {
+      musicToggle.textContent = '🎵 Music Off';
+      musicToggle.classList.remove('playing');
+    });
+
+    // Web Audio API — soft bell chime on click (no external files)
+    function playChime() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.frequency.setValueAtTime(880, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(1320, ctx.currentTime + 0.1);
+        osc.frequency.exponentialRampToValueAtTime(1760, ctx.currentTime + 0.2);
+        osc.type = 'sine';
+        gain.gain.setValueAtTime(0.15, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.5);
+      } catch (_) {}
+    }
+
+    function createSnowflakes() {
+      snowContainer.innerHTML = '';
+      const count = 50;
+      for (let i = 0; i < count; i++) {
+        const flake = document.createElement('div');
+        flake.className = 'snowflake';
+        flake.textContent = snowChars[Math.floor(Math.random() * snowChars.length)];
+        flake.style.left = Math.random() * 100 + '%';
+        flake.style.animationDuration = (8 + Math.random() * 8) + 's';
+        flake.style.animationDelay = Math.random() * 5 + 's';
+        flake.style.fontSize = (0.6 + Math.random() * 1) + 'rem';
+        snowContainer.appendChild(flake);
+      }
+    }
+
+    const fallingPhotoSrcs = ['assets/falling-1.png', 'assets/falling-2.png', 'assets/falling-3.png'];
+    const fallingPhotosEl = document.getElementById('fallingPhotos');
+
+    function createFallingPhotos() {
+      fallingPhotosEl.innerHTML = '';
+      fallingPhotosEl.classList.add('active');
+      fallingPhotoSrcs.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.className = 'falling-photo falling-photo-' + i;
+        img.src = src;
+        img.alt = '';
+        img.style.left = (18 + i * 28 + Math.random() * 8) + '%';
+        img.style.animationDelay = (i * 3.5) + 's';
+        fallingPhotosEl.appendChild(img);
+      });
+    }
+
+    function launchChristmas() {
+      playChime();
+      snowContainer.classList.add('active');
+      glowOverlay.classList.add('active');
+      launchBtn.classList.add('launched');
+      if (launchBtnBottom) launchBtnBottom.classList.add('launched');
+      createSnowflakes();
+      createFallingPhotos();
+      if (bgMusic.paused && !musicToggle.classList.contains('playing')) {
+        bgMusic.play().then(() => {
+          musicToggle.textContent = '🎵 Music On';
+          musicToggle.classList.add('playing');
+        }).catch(() => {});
+      }
+    }
+
+    launchBtn.addEventListener('click', launchChristmas);
+    if (launchBtnBottom) launchBtnBottom.addEventListener('click', launchChristmas);
+
+    // Music toggle — click to turn off (or back on)
+    musicToggle.addEventListener('click', () => {
+      if (bgMusic.paused) {
+        bgMusic.play().then(() => {
+          musicToggle.textContent = '🎵 Music On';
+          musicToggle.classList.add('playing');
+        }).catch(() => {});
+      } else {
+        bgMusic.pause();
+        musicToggle.textContent = '🎵 Music Off';
+        musicToggle.classList.remove('playing');
+      }
+    });
+
+    const cookieImages = ['assets/cookies-1.png','assets/cookies-2.png','assets/cookies-3.png','assets/cookies-4.png','assets/cookies-5.png'];
+    const cookieCaptions = ['Peanut butter blossoms','Christmas tree cookies','Baking in progress','Kitchen prep','Chocolate chip classics'];
+    const cookieModal = document.getElementById('cookieModal');
+    const cookieMontage = document.getElementById('cookieMontage');
+    const turkeyModal = document.getElementById('turkeyModal');
+    const videoModal = document.getElementById('videoModal');
+    const opsModal = document.getElementById('opsModal');
+    const giftModal = document.getElementById('giftModal');
+    const modals = [{ el: cookieModal, key: 'cookie' }, { el: turkeyModal, key: 'turkey' }, { el: videoModal, key: 'video' }, { el: opsModal, key: 'ops' }, { el: giftModal, key: 'gift' }];
+
+    const giftGags = [
+      { img: 'https://www.cvs.com/bizcontent/merchandising/productimages/high_res/4203710300.jpg?im=Resize=(300,300),aspect=ignore', text: 'DUPLICATE DETECTED: Beano — Already on Ryan\'s list.' },
+      { img: 'https://i.ebayimg.com/images/g/PlsAAOSwEIFduIEw/s-l400.jpg', text: 'CONFLICT RESOLVED: Peter Heater — Assigned to Greg.' },
+      { img: 'https://cdn.thisiswhyimbroke.com/buying-guides-thumb/35/merry-chrithmith-ugly-sweater_400x.jpg', text: 'WARNING: "Merry Chrithmith" — Ryan, Michelle & Greg requested. Lottery winner: You.' },
+      { img: 'https://cdn.thisiswhyimbroke.com/thumb/grinch-arm-christmas-tree-ornament-2_400x333.jpg', text: 'CLEAR — No duplicate sweaters. Grinch arm ornament approved.' }
+    ];
+    const scanNames = ['Ryan', 'Michelle', 'Greg'];
+
+    document.getElementById('giftFeature').addEventListener('click', () => {
+      openModal(giftModal, 'gift');
+      const log = document.getElementById('giftScanLog');
+      const result = document.getElementById('giftResult');
+      const resultImg = document.getElementById('giftResultImg');
+      const resultText = document.getElementById('giftResultText');
+      result.style.display = 'none';
+      log.textContent = 'SCANNING...';
+      let i = 0;
+      const scanInterval = setInterval(() => {
+        log.textContent = 'SCANNING... ' + scanNames[i % scanNames.length] + '...';
+        i++;
+        if (i >= 4) {
+          clearInterval(scanInterval);
+          const gag = giftGags[Math.floor(Math.random() * giftGags.length)];
+          resultImg.src = gag.img;
+          resultImg.alt = gag.text;
+          resultText.textContent = gag.text;
+          result.style.display = 'block';
+          log.textContent = 'SCAN COMPLETE.';
+        }
+      }, 600);
+      intervals.gift = [scanInterval];
+    });
+    document.getElementById('closeGift').addEventListener('click', () => closeModal(giftModal, 'gift'));
+
+    function openModal(modal, key, onOpen) {
+      modal.classList.add('open');
+      playChime();
+      (intervals[key] || []).forEach(id => clearInterval(id));
+      intervals[key] = onOpen ? [].concat(onOpen()).filter(Boolean) : [];
+    }
+    function closeModal(modal, key) {
+      modal.classList.remove('open');
+      (intervals[key] || []).forEach(id => clearInterval(id));
+      intervals[key] = [];
+    }
+
+    document.getElementById('cookieFeature').addEventListener('click', () => openModal(cookieModal, 'cookie', () => montage(cookieMontage, cookieImages, 3500, cookieCaptions)));
+    document.getElementById('closeCookie').addEventListener('click', () => closeModal(cookieModal, 'cookie'));
+    modals.forEach(({ el, key }) => el.addEventListener('click', e => { if (e.target === el) closeModal(el, key); }));
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') modals.forEach(({ el, key }) => { if (el.classList.contains('open')) closeModal(el, key); });
+    });
+
+    // === COUNTDOWN ===
+    const xmas2026 = new Date('2026-12-25T00:00:00');
+    const cdDaysEl = document.getElementById('cdDays');
+    const cdHoursEl = document.getElementById('cdHours');
+    const cdMinsEl = document.getElementById('cdMins');
+    const cdSecsEl = document.getElementById('cdSecs');
+    const countdownStatus = document.getElementById('countdownStatus');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = xmas2026 - now;
+      if (diff <= 0) {
+        cdDaysEl.textContent = '0';
+        cdHoursEl.textContent = '0';
+        cdMinsEl.textContent = '0';
+        cdSecsEl.textContent = '0';
+        countdownStatus.textContent = 'SLEIGH HAS LANDED';
+        return;
+      }
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const mins = Math.floor((diff % 3600000) / 60000);
+      const secs = Math.floor((diff % 60000) / 1000);
+      cdDaysEl.textContent = days;
+      cdHoursEl.textContent = String(hours).padStart(2, '0');
+      cdMinsEl.textContent = String(mins).padStart(2, '0');
+      cdSecsEl.textContent = String(secs).padStart(2, '0');
+      if (days >= 30) {
+        const elfMsgs = ['The elves are warming up', 'Workshop dust bunnies: EVICTED', 'Hot cocoa supplies: STOCKED', 'Reindeer cardio: IN PROGRESS', 'North Pole WiFi: STRONG', 'Toy prototypes: PILING UP', 'Sleigh in the shop for a tune-up', 'Mrs. Claus has the cookies in the oven', 'Elves are doing stretches', 'Naughty list: Being double-checked'];
+        countdownStatus.textContent = elfMsgs[Math.floor(Date.now() / 8000) % elfMsgs.length];
+      } else if (days >= 7) countdownStatus.textContent = 'GIFT WRAPPING PROTOCOLS ENGAGED';
+      else if (days >= 1 || hours >= 1) countdownStatus.textContent = 'FINAL COUNTDOWN - ALL STATIONS REPORT';
+      else if (mins >= 1) countdownStatus.textContent = 'SLEIGH LAUNCH IMMINENT';
+      else countdownStatus.textContent = 'SLEIGH LAUNCH IMMINENT';
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // === SANTA OPS CENTER ===
+    const opsTelemetry = document.getElementById('opsTelemetry');
+    const opsFeed = document.getElementById('opsFeed');
+
+    function rand(min, max, decimals) {
+      const v = min + Math.random() * (max - min);
+      return decimals ? v.toFixed(decimals) : Math.round(v);
+    }
+    function updateOpsTelemetry() {
+      const vel = rand(4.3, 5.1, 1);
+      const alt = rand(28500, 34500, 0);
+      const payload = rand(81, 87, 1);
+      const lumens = rand(820, 875, 0);
+      const cookies = rand(8, 15, 0);
+      const milk = rand(36, 40, 0);
+      const eta = Math.random() > 0.3 ? 'CALCULATING...' : rand(8, 47, 0) + 'm ' + rand(12, 59, 0) + 's';
+      const lat = (40 + Math.random() * 2).toFixed(2);
+      const lon = (-78 - Math.random() * 2).toFixed(2);
+      opsTelemetry.innerHTML = [
+        'SLEIGH VELOCITY ........ Mach ' + vel,
+        'ALTITUDE ............... ' + alt.toLocaleString() + ' ft',
+        'CURRENT POS ............ ' + lat + '°N, ' + lon + '°W',
+        'PRESENT PAYLOAD ........ ' + payload + '%',
+        'REINDEER BIOMETRICS .... NOMINAL',
+        'RUDOLPH LUMINOSITY ..... ' + lumens + ' lumens',
+        'COOKIE RESERVES ........ CRITICAL (' + cookies + '%)',
+        'MILK TEMPERATURE ....... ' + milk + '°F (OPTIMAL)',
+        'ETA TO CHIMNEY ......... ' + eta
+      ].map(l => '<span>' + l + '</span><br>').join('');
+    }
+    updateOpsTelemetry();
+
+    const feedLines = [
+      '[22:41:03] BLITZEN: Cardiovascular output nominal',
+      '[22:41:15] NAUGHTY LIST SCAN: Suplick family - CLEARED',
+      '[22:41:28] WARNING: Chimney diameter within tolerance',
+      '[22:41:45] PRANCER: Requested snack break - DENIED',
+      '[22:42:01] DASHER: Requesting vector to SUPLICK RESIDENCE',
+      '[22:42:18] COMET: V-formation holding steady',
+      '[22:42:33] DANCER: Wingspan nominal, altitude stable',
+      '[22:42:47] VIXEN: Requesting clearance sector 7-G',
+      '[22:43:02] CUPID: Cargo manifest verified — 3 packages',
+      '[22:43:19] DONNER: Rudolph beacon confirmed, tracking'
+    ];
+    let feedIndex = 0;
+    function updateOpsFeed() {
+      const scroll = feedLines.slice(feedIndex).concat(feedLines.slice(0, feedIndex)).join('\n');
+      opsFeed.innerHTML = '<div class="ops-feed-line">' + scroll.replace(/\n/g, '</div><div class="ops-feed-line">') + '</div>';
+      feedIndex = (feedIndex + 1) % feedLines.length;
+    }
+    updateOpsFeed();
+
+    document.getElementById('opsBtn').addEventListener('click', () => openModal(opsModal, 'ops', () => [setInterval(updateOpsFeed, 2000), setInterval(updateOpsTelemetry, 1500)]));
+    document.getElementById('closeOps').addEventListener('click', () => closeModal(opsModal, 'ops'));
+    document.getElementById('closeVideo').addEventListener('click', () => closeModal(videoModal, 'video'));
+    // === HALLMARK GENERATOR ===
+    const prefixes = ['A', 'The', 'My', 'One', 'This', 'Love'];
+    const adjectives = ['Snowy', 'Cozy', 'Magical', 'Mistletoe', 'Gingerbread', 'Evergreen', 'Frosty'];
+    const nouns = ['Kiss', 'Prince', 'Miracle', 'Secret', 'Promise', 'Wish', 'Heart'];
+    const prepositions = ['in', 'of', 'at', 'Under the'];
+    const locations = ['Pinecone Falls', 'Snowflake Lane', 'Holly Springs', 'Mistletoe Manor', 'Candy Cane Creek', 'the Mistletoe Inn'];
+
+    const hallmarkName = document.getElementById('hallmarkName');
+    const hallmarkGenerate = document.getElementById('hallmarkGenerate');
+    const hallmarkPoster = document.getElementById('hallmarkPoster');
+    const hallmarkTitle = document.getElementById('hallmarkTitle');
+    const hallmarkTagline = document.getElementById('hallmarkTagline');
+    const hallmarkCast = document.getElementById('hallmarkCast');
+
+    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    hallmarkGenerate.addEventListener('click', () => {
+      const name = hallmarkName.value.trim() || 'You';
+      const template = Math.random();
+      let title;
+      if (template < 0.4) {
+        title = pick(prefixes) + ' ' + pick(adjectives) + ' ' + pick(nouns) + ' ' + pick(prepositions) + ' ' + pick(locations);
+      } else if (template < 0.7) {
+        title = pick(prefixes) + ' ' + pick(adjectives) + ' ' + pick(nouns) + ' of ' + pick(nouns);
+      } else {
+        title = 'Love Under the ' + pick(locations).replace(/^the /i, '');
+      }
+      hallmarkTitle.textContent = title;
+      hallmarkTagline.textContent = 'This Christmas, ' + name + ' discovers that the greatest gift... was love all along.';
+      hallmarkCast.textContent = 'Starring ' + name + ' and a mysteriously handsome small-town baker';
+      hallmarkPoster.style.display = 'block';
+      playChime();
+    });
+
+    // === TURKEY PROTOCOL ===
+    const turkeyTemp = document.getElementById('turkeyTemp');
+    const turkeyTime = document.getElementById('turkeyTime');
+    const turkeyCrisp = document.getElementById('turkeyCrisp');
+    const turkeyStatus = document.getElementById('turkeyStatus');
+
+    function updateTurkeyDashboard() {
+      const temp = 158 + Math.floor(Math.random() * 12);
+      const mins = 25 + Math.floor(Math.random() * 35);
+      const crisp = 72 + Math.floor(Math.random() * 18);
+      turkeyTemp.textContent = temp + '°F';
+      turkeyTime.textContent = mins + ' min';
+      turkeyCrisp.textContent = crisp + '%';
+      if (temp >= 165) turkeyStatus.textContent = 'PROTOCOL COMPLETE — Rest 15 min before carving.';
+      else if (temp >= 155) turkeyStatus.textContent = 'Almost there. Basting recommended.';
+      else turkeyStatus.textContent = 'Cooking nominal. Oven stable at 325°F.';
+    }
+
+    document.getElementById('turkeyFeature').addEventListener('click', () => {
+      openModal(turkeyModal, 'turkey', () => { updateTurkeyDashboard(); return setInterval(updateTurkeyDashboard, 2000); });
+    });
+    document.getElementById('closeTurkey').addEventListener('click', () => closeModal(turkeyModal, 'turkey'));
+  </script>
+
+</body>
+</html>
