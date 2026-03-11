@@ -33,9 +33,9 @@ body {
 @keyframes fall { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.8; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.4; } }
 .falling-photo {
   position: absolute;
-  width: 249px;
+  width: 324px;
   height: auto;
-  max-height: 332px;
+  max-height: 432px;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
@@ -185,7 +185,7 @@ h1 {
 .hero-montage {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 650px;
   aspect-ratio: 4/3;
   margin: 0 auto 3rem;
   border-radius: 8px;
@@ -661,8 +661,8 @@ h1 {
   }
 
   .falling-photo {
-    width: min(180px, 45vw);
-    max-height: 240px;
+    width: min(234px, 45vw);
+    max-height: 312px;
   }
   .falling-photo-0 { left: 18% !important; animation-delay: 0s !important; }
   .falling-photo-1 { left: 50% !important; animation-delay: 2.5s !important; }
@@ -695,7 +695,7 @@ h1 {
   h1 { font-size: clamp(2rem, 12vw, 4rem); }
   .countdown-unit { min-width: 55px; }
   .countdown-value { font-size: 1.75rem; }
-  .falling-photo { width: min(150px, 42vw); max-height: 200px; }
+  .falling-photo { width: min(195px, 42vw); max-height: 260px; }
   .falling-photo-0 { left: 18% !important; animation-delay: 0s !important; }
   .falling-photo-1 { left: 50% !important; animation-delay: 2.5s !important; }
   .falling-photo-2 { left: 18% !important; animation-delay: 5s !important; }
